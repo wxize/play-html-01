@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./typing.js/typing.css">
+    <script src="./typing.js/typing.js"></script>
+    <style>
+        html {
+            font-size: 100%;
+        }
+        html, body, #output-wrap{
+            margin: 0; padding: 0; background-color: #000;
+            width: 100%; height: 100%;
+        }
+        #output-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #output {
+            display: inline-block;
+            color: #ffffff;
+            width: 100%;
+            height: 100%;
+            /* border: 2px solid red; */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        div.item {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 0;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" style="position: fixed; z-index: -1; opacity: 0.4;"></canvas>
+    <script src="./libs/bg_effect.js"></script>
+
+
+    <div id="source" style="display: none;">
+    </div>
+    <!-- <div id="output-wrap">
+        <div id="output"></div>
+        <span class="typing-cursor-white">|</span>
+    </div> -->
+    <div id="output"></div>
+
+    <!-- 配制文字 -->
+    <script src="./config.js"></script>
+
+    <!-- 动态生成 element -->
+    <script>
+        function showContent() {
+            let arr = pages.shift()
+            if (arr && arr.length) {
+                
+                let html = arr.join('')
+                let source = document.getElementById('source')
+                let output = document.getElementById('output')
+                source.innerHTML = html
+                output.innerHTML = ''
+
+                let typing = new Typing({
+                    source: source,//document.getElementById('source'),
+                    output: output,//document.getElementById('output'),
+                    delay: 140,
+                    done: function() {
+                        console.log('打印完成')
+                        setTimeout(() => {
+                            showContent()    
+                        }, 1000);
+                    }
+                })
+                typing.start()
+            } 
+        }
+        showContent()
+    </script>
+</body>
+</html>

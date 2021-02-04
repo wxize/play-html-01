@@ -1,0 +1,52 @@
+{
+  "_from": "typing.js",
+  "_id": "typing.js@2.1.0",
+  "_inBundle": false,
+  "_integrity": "sha1-845rok6cyrXB0GG4cEADN5OXhEQ=",
+  "_location": "/typing.js",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "typing.js",
+    "name": "typing.js",
+    "escapedName": "typing.js",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/typing.js/-/typing.js-2.1.0.tgz",
+  "_shasum": "f38e6ba24e9ccab5c1d061b87040033793978444",
+  "_spec": "typing.js",
+  "_where": "F:\\demo",
+  "author": {
+    "name": "CoffeeDeveloper"
+  },
+  "bugs": {
+    "url": "https://github.com/coffeedeveloper/typing.js/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "typing element",
+  "homepage": "https://github.com/coffeedeveloper/typing.js#readme",
+  "keywords": [
+    "type",
+    "animation"
+  ],
+  "license": "MIT",
+  "main": "typing.js",
+  "name": "typing.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coffeedeveloper/typing.js.git"
+  },
+  "scripts": {
+    "build": "uglifyjs -o typing.min.js typing.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.1.0"
+}
